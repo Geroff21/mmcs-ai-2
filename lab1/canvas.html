@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рукописные римские цифры</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+      cursor: crosshair;
+    }
+    #canvas-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Рисование рукописных римских цифр</h1>
+  <div id="canvas-container">
+    <!-- Увеличим размер канваса для удобства рисования (например, 320x320) -->
+    <canvas id="canvas" width="320" height="320"></canvas>
+    <br>
+    <button id="saveButton">Сохранить изображение</button>
+    <button id="clearButton">Очистить канвас</button>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const saveButton = document.getElementById('saveButton');
+    const clearButton = document.getElementById('clearButton');
+    
+    // Настройка стилей для рисования
+    ctx.lineWidth = 16; // Увеличим толщину линии для более удобного рисования
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = 'black';
+
+    let drawing = false;
+    const canvasSize = 320; // Размер канваса для удобства рисования
+    const imageSize = 64; // Размер изображения для сохранения (64x64)
+
+    // Масштаб для рисования на канвасе (канвас больше, рисуем в 5 раз меньше)
+    const scaleFactor = canvasSize / imageSize;
+
+    let fileIndex = 1;  // Счетчик для нумерации файлов
+
+    // Функция начала рисования
+    canvas.addEventListener('mousedown', (e) => {
+      drawing = true;
+      ctx.beginPath();
+      ctx.moveTo(e.offsetX, e.offsetY);
+    });
+
+    // Функция рисования
+    canvas.addEventListener('mousemove', (e) => {
+      if (drawing) {
+        const x = e.offsetX;
+        const y = e.offsetY;
+
+        // Масштабируем рисование, чтобы оно соответствовало масштабу канваса
+        ctx.lineTo(x, y);
+        ctx.stroke();
+      }
+    });
+
+    // Функция окончания рисования
+    canvas.addEventListener('mouseup', () => {
+      drawing = false;
+    });
+
+    // Функция окончания рисования при уходе мыши
+    canvas.addEventListener('mouseout', () => {
+      drawing = false;
+    });
+
+    // Сохранить изображение на клик
+    saveButton.addEventListener('click', () => {
+      // Сначала получаем изображение канваса в виде DataURL
+      const dataURL = canvas.toDataURL('image/png');
+      const image = new Image();
+      image.src = dataURL;
+
+      image.onload = () => {
+        // Теперь создаем новый канвас, где будет изображение 64x64 пикселя
+        const imageCanvas = document.createElement('canvas');
+        const imageCtx = imageCanvas.getContext('2d');
+        imageCanvas.width = imageSize;
+        imageCanvas.height = imageSize;
+
+        // Масштабируем изображение с канваса 320x320 до 64x64
+        imageCtx.drawImage(image, 0, 0, imageSize, imageSize);
+
+        // Создаем ссылку для скачивания изображения с нумерацией
+        const finalDataURL = imageCanvas.toDataURL('image/png');
+        const a = document.createElement('a');
+        a.href = finalDataURL;
+        a.download = `${fileIndex}.png`;  // Файл с нумерацией, например, 1.png, 2.png, и т.д.
+        a.click();
+
+        // После сохранения очищаем канвас
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Увеличиваем счетчик для следующего файла
+        fileIndex++;
+      };
+    });
+
+    // Очистить канвас при нажатии на кнопку "Очистить"
+    clearButton.addEventListener('click', () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    });
+
+  </script>
+</body>
+</html>

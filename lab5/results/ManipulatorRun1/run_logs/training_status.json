@@ -1,0 +1,38 @@
+{
+    "Manipulator": {
+        "checkpoints": [
+            {
+                "steps": 499810,
+                "file_path": "results\\ManipulatorRun1\\Manipulator\\Manipulator-499810.onnx",
+                "reward": 0.6956818310797892,
+                "creation_time": 1732136984.7844005,
+                "auxillary_file_paths": [
+                    "results\\ManipulatorRun1\\Manipulator\\Manipulator-499810.pt"
+                ]
+            },
+            {
+                "steps": 936309,
+                "file_path": "results\\ManipulatorRun1\\Manipulator\\Manipulator-936309.onnx",
+                "reward": 0.8465517205025616,
+                "creation_time": 1732137686.498292,
+                "auxillary_file_paths": [
+                    "results\\ManipulatorRun1\\Manipulator\\Manipulator-936309.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 936309,
+            "file_path": "results\\ManipulatorRun1\\Manipulator.onnx",
+            "reward": 0.8465517205025616,
+            "creation_time": 1732137686.498292,
+            "auxillary_file_paths": [
+                "results\\ManipulatorRun1\\Manipulator\\Manipulator-936309.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.5.1+cpu"
+    }
+}

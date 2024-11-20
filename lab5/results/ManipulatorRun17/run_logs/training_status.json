@@ -1,0 +1,65 @@
+{
+    "Manipulator": {
+        "checkpoints": [
+            {
+                "steps": 499960,
+                "file_path": "results\\ManipulatorRun17\\Manipulator\\Manipulator-499960.onnx",
+                "reward": -0.0725775310471321,
+                "creation_time": 1731951714.3677838,
+                "auxillary_file_paths": [
+                    "results\\ManipulatorRun17\\Manipulator\\Manipulator-499960.pt"
+                ]
+            },
+            {
+                "steps": 999981,
+                "file_path": "results\\ManipulatorRun17\\Manipulator\\Manipulator-999981.onnx",
+                "reward": -0.06329189319838582,
+                "creation_time": 1731952853.7373567,
+                "auxillary_file_paths": [
+                    "results\\ManipulatorRun17\\Manipulator\\Manipulator-999981.pt"
+                ]
+            },
+            {
+                "steps": 1499999,
+                "file_path": "results\\ManipulatorRun17\\Manipulator\\Manipulator-1499999.onnx",
+                "reward": -0.0477075324183214,
+                "creation_time": 1731953998.8393092,
+                "auxillary_file_paths": [
+                    "results\\ManipulatorRun17\\Manipulator\\Manipulator-1499999.pt"
+                ]
+            },
+            {
+                "steps": 1999981,
+                "file_path": "results\\ManipulatorRun17\\Manipulator\\Manipulator-1999981.onnx",
+                "reward": -0.05008249531189601,
+                "creation_time": 1731955145.6703322,
+                "auxillary_file_paths": [
+                    "results\\ManipulatorRun17\\Manipulator\\Manipulator-1999981.pt"
+                ]
+            },
+            {
+                "steps": 2000021,
+                "file_path": "results\\ManipulatorRun17\\Manipulator\\Manipulator-2000021.onnx",
+                "reward": -0.04974687278121834,
+                "creation_time": 1731955145.7028356,
+                "auxillary_file_paths": [
+                    "results\\ManipulatorRun17\\Manipulator\\Manipulator-2000021.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 2000021,
+            "file_path": "results\\ManipulatorRun17\\Manipulator.onnx",
+            "reward": -0.04974687278121834,
+            "creation_time": 1731955145.7028356,
+            "auxillary_file_paths": [
+                "results\\ManipulatorRun17\\Manipulator\\Manipulator-2000021.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.5.1+cpu"
+    }
+}
