@@ -1,0 +1,12 @@
+[submodule "lab5/ml-agents"]
+	path = lab5/ml-agents
+	url = https://github.com/Unity-Technologies/ml-agents.git
+[submodule "AI_RL_Lab_01"]
+	path = AI_RL_Lab_01
+	url = https://github.com/RobolabGs2/AI_RL_Lab_01.git
+[submodule "lab5/AI_RL_Lab_01"]
+	path = lab5/AI_RL_Lab_01
+	url = https://github.com/RobolabGs2/AI_RL_Lab_01.git
+[submodule "lab5/unityManipulator"]
+	path = lab5/unityManipulator
+	url = https://github.com/RobolabGs2/AI_RL_Lab_01.git
