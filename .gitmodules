@@ -4,3 +4,6 @@
 [submodule "lab5/unityManipulator"]
 	path = lab5/unityManipulator
 	url = https://github.com/RobolabGs2/AI_RL_Lab_01.git
+[submodule "lab6/unityBoxes"]
+	path = lab6/unityBoxes
+	url = https://github.com/Geroff21/AI_RL_Lab_02.git
